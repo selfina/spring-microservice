@@ -548,17 +548,22 @@
                     <useSystemClassLoader>false</useSystemClassLoader>
                 </configuration>
             </plugin>
-<plugin>
-				<groupId>com.heroku.sdk</groupId>
-				<artifactId>heroku-maven-plugin</artifactId>
-				<version>2.0.2</version>
-				<configuration>
-					<appName>sleepy-crag-11580</appName>
-					<processTypes>
-						<web>java -jar target/GOT-heroes-0.0.1-SNAPSHOT.jar</web>
-					</processTypes>
-				</configuration>
-			</plugin>
+ <plugin>
+      <groupId>com.heroku.sdk</groupId>
+      <artifactId>heroku-maven-plugin</artifactId>
+      <version>1.1.1</version>
+      <configuration>
+          <appName>spring-boot-microservic</appName>
+          <includeTarget>false</includeTarget>
+          <includes>
+              <include>${basedir}/${full-artifact-name}</include>
+          </includes>
+          <jdkVersion>1.8</jdkVersion>
+          <processTypes>
+              <web>java $JAVA_OPTS -jar ${full-artifact-name}</web>
+          </processTypes>
+      </configuration>
+  </plugin>
         </plugins>
     </build>
 
