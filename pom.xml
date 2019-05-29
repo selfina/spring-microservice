@@ -548,7 +548,17 @@
                     <useSystemClassLoader>false</useSystemClassLoader>
                 </configuration>
             </plugin>
-
+<plugin>
+				<groupId>com.heroku.sdk</groupId>
+				<artifactId>heroku-maven-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<appName>sleepy-crag-11580</appName>
+					<processTypes>
+						<web>java -jar target/GOT-heroes-0.0.1-SNAPSHOT.jar</web>
+					</processTypes>
+				</configuration>
+			</plugin>
         </plugins>
     </build>
 
